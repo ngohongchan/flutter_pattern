@@ -8,13 +8,15 @@ import 'package:flutter_pattern/3_application/pages/advice/widgets/custom_button
 import 'package:flutter_pattern/3_application/pages/advice/widgets/error_message.dart';
 import 'package:provider/provider.dart';
 
+import '../../../injection.dart';
+
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerCubit(),
+      create: (context) =>  sl<AdvicerCubit>(),
       child: const AdvicerPage(),
     );
   }
