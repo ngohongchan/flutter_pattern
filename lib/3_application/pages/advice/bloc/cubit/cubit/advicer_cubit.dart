@@ -12,8 +12,8 @@ const serverFailureMessage = 'Ups, API Error. please try again!';
 const cacheFailureMessage = 'Ups, cache failed. Please try again!';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
-  AdvicerCubit() : super(AdviceInitial());
-  final AdviceUseCases adviceUseCases = AdviceUseCases();
+  AdvicerCubit({required this.adviceUseCases}) : super(AdviceInitial());
+  final AdviceUseCases adviceUseCases;
   // could also use other use cases
 
   void adviceRequested() async {
