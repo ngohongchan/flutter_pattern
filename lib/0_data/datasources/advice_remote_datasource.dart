@@ -20,9 +20,7 @@ class AdviceRemoteDataSourceImpl implements AdviceRemoteDatasource {
     final response = await client.get(
       Uri.parse('https://64196f0df398d7d95d3f26d8.mockapi.io/advice'),
       headers: {
-        'content-type': 'application/json ',
-        'access-control-allow-methods': 'GET',
-        'access-control-allow-origin': '*',
+        'content-type': 'application/json',
       },
     );
 
