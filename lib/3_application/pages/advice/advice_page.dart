@@ -16,7 +16,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>  sl<AdvicerCubit>(),
+      create: (context) => sl<AdvicerCubit>(),
       child: const AdvicerPage(),
     );
   }
@@ -78,10 +78,13 @@ class AdvicerPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 200,
               child: Center(
-                child: CustomButton(),
+                child: CustomButton(
+                  onTap: () =>
+                      BlocProvider.of<AdvicerCubit>(context).adviceRequested(),
+                ),
               ),
             ),
           ],
